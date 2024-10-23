@@ -18,7 +18,7 @@ class ListaCuentas extends StatelessWidget {
                 
         ),
         child: ListView(
-          children: [
+          children:const [
             ListTile(
               trailing: Text("\$1.000", style: TextStyle(fontSize: 16),),
               leading: Icon(Icons.attach_money,color: Colors.teal,),

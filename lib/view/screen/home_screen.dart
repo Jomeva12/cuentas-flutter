@@ -11,11 +11,11 @@ class HomeScreen extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
-        return  SafeArea(
-          child: Scaffold(
-
-            backgroundColor: Colors.teal,
-              body: Column(
+        return  Scaffold(
+        
+          backgroundColor: Colors.teal,
+            body: SafeArea(
+              child: Column(
                 children: [
                   HeaderCuentas(),
                   ListaCuentas(),
@@ -23,14 +23,17 @@ class HomeScreen extends StatelessWidget {
                   
                 ],
               ),
-            floatingActionButton: FloatingActionButton(onPressed: (){
-              showModalBottomSheet(context: context, builder: (context){
-                return AddBottomSheet();
-              });
-
-            },child: Icon(Icons.add,color: Colors.white,),
-            backgroundColor: Colors.teal,),
-          ),
+            ),
+          floatingActionButton: FloatingActionButton(onPressed: (){
+            showModalBottomSheet(
+              isScrollControlled: true,
+                context: context,
+                builder: (context){
+              return AddBottomSheet();
+            });
+        
+          },child: Icon(Icons.add,color: Colors.white,),
+          backgroundColor: Colors.teal,),
         );
     }
 }
